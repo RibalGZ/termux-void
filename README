@@ -1,0 +1,18 @@
+termux-void
+===============================================================================
+
+| Introduction
+
+This Termux shell script will setup a VoidLinux chroot in your Termux environment.
+
+| Installation
+
+```
+$ curl -O https://raw.githubusercontent.com/kojicomics/termux-void/master/void-install.sh
+$ chmod a+x void-install.sh
+$ ./void-install.sh [musl|glibc]
+```
+
+| Running the chroot
+
+$ void-$ARCH [root] # Located in $PREFIX/bin/
