@@ -63,9 +63,9 @@ cat << EOF > $BIN
 [ -n "\$CHROOT_DIR" ] || CHROOT_DIR="\$HOME/.chroots"
 unset LD_PRELOAD
 if [ "\$1" = "root" ]; then
-	exec proot --link2symlink -0 -R "\$CHROOT_DIR/void-$ARCH" -b /dev -b /sys -b /proc -b "\$HOME" /usr/bin/env -i /usr/bin/bash --login
+	exec proot --link2symlink -0 -r "\$CHROOT_DIR/void-$ARCH" -b /dev -b /sys -b /proc -b "\$HOME" /usr/bin/env -i /usr/bin/bash --login
 else
-	exec proot --link2symlink -R "\$CHROOT_DIR/void-$ARCH" -b /dev -b /sys -b /proc -b "\$HOME" /usr/bin/env -i /usr/bin/bash --login
+	exec proot --link2symlink -r "\$CHROOT_DIR/void-$ARCH" -b /dev -b /sys -b /proc -b "\$HOME" /usr/bin/env -i /usr/bin/bash --login
 fi
 EOF
 chmod 700 $BIN
